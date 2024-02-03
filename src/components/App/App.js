@@ -34,9 +34,11 @@ const App = () => {
     dispatch({ type: 'import_data', payload: storedState });
   }, [dispatch, setPageRef, setPanZoomRef, i18n, settings.language]);
 
+  const selectedTemplate = templates.find((x) => theme.layout.toLowerCase() === x.key);
+
   return (
     <Suspense fallback="Loading...">
-      <div className="h-screen grid grid-cols-5 items-center">
+      <div className="h-screen grid grid-cols-5 items-center mt-5 bg-gradient-to-t from-blue-300/50  to-violet-300/50 text-gray-900">
         <LeftSidebar />
 
         <div className="relative z-10 h-screen overflow-hidden col-span-3 flex justify-center items-center">
@@ -51,7 +53,8 @@ const App = () => {
             style={{ outline: 'none' }}
           >
             <div id="page" ref={pageRef} className="shadow-2xl break-words">
-              {templates.find(x => theme.layout.toLowerCase() === x.key).component()}
+              {/* {templates.find(x => theme.layout.toLowerCase() === x.key).component()} */}
+              {selectedTemplate && selectedTemplate.component()}
             </div>
           </PanZoom>
 
@@ -59,7 +62,8 @@ const App = () => {
         </div>
 
         <div id="printPage" className="break-words">
-          {templates.find(x => theme.layout.toLowerCase() === x.key).component()}
+          {/* {templates.find(x => theme.layout.toLowerCase() === x.key).component()} */}
+          {selectedTemplate && selectedTemplate.component()}
         </div>
 
         <RightSidebar />

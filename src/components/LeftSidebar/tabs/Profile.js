@@ -1,3 +1,5 @@
+/* eslint-disable prefer-template */
+/* eslint-disable prefer-const */
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import * as _  from 'lodash';
@@ -42,7 +44,8 @@ const ProfileTab = ({ data, onChange }) => {
 
       <TextField
         className="mb-6"
-        label={t('profile.photoUrl.label')}
+        // label={t('profile.photoUrl.label')}
+        label="Photo"
         placeholder="https://i.imgur.com/..."
         value={_.get(data, 'jsonld["@graph"][1].image.contentUrl', "")}
         onChange={v => {setValue('jsonld["@graph"][1].image', "contentUrl", v, "ImageObject", personUrl+"#image");}}
@@ -51,7 +54,8 @@ const ProfileTab = ({ data, onChange }) => {
       <div className="grid grid-cols-2 col-gap-4">
         <TextField
           className="mb-6"
-          label={t('profile.firstName.label')}
+          // label={t('profile.firstName.label')}
+          label="Prenom"
           placeholder="Jane"
           value={_.get(data,"jsonld['@graph'][1].givenName", "")}
           onChange={v => setValue('jsonld["@graph"][1]', "givenName", v)}
@@ -60,7 +64,8 @@ const ProfileTab = ({ data, onChange }) => {
 
         <TextField
           className="mb-6"
-          label={t('profile.lastName.label')}
+          // label={t('profile.lastName.label')}
+          label="Nom"
           placeholder="Doe"
           value={_.get(data,"jsonld['@graph'][1].familyName", "")}
           onChange={v => setValue('jsonld["@graph"][1]', "familyName", v)}
@@ -70,7 +75,8 @@ const ProfileTab = ({ data, onChange }) => {
 
       <TextField
         className="mb-6"
-        label={t('profile.subtitle.label')}
+        // label={t('profile.subtitle.label')}
+        label="Titre "
         placeholder="Full-Stack Web Developer"
         value={_.get(data, 'jsonld["@graph"][1].description', "")}
         onChange={v => {setValue('jsonld["@graph"][1]', "description", v);}}
@@ -80,8 +86,9 @@ const ProfileTab = ({ data, onChange }) => {
 
       <TextField
         className="mb-6"
-        label={t('profile.website.label')}
-        placeholder="janedoe.me"
+        // label={t('profile.website.label')}
+        label="Site Website"
+        placeholder="enokDev.com"
         value={_.get(data,'jsonld["@graph"][1].sameAs', [])}
         onChange={v => setValue('jsonld["@graph"][1]', "sameAs", v)}
         AddItem={()=>{}}

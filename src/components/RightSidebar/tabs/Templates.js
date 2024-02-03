@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React from 'react';
 
 import templates from '../../../templates';
@@ -6,7 +7,7 @@ const TemplatesTab = ({ theme, onChange }) => {
   return (
     <div className="grid grid-cols-2 gap-6">
       {templates.map(x => (
-        <div key={x.key} className="text-center" onClick={() => {if(!x.disable){onChange('theme.layout', x.key);}else{alert("This template is under develoment");}}}>
+        <div key={x.key} className="text-center" onClick={() => {if(!x.disable){onChange('theme.layout', x.key);}else{alert("Ce modèle est en cours de développement");}}}>
           <img
             className={`rounded cursor-pointer object-cover border shadow hover:shadow-md ${
               theme.layout.toLowerCase() === x.key

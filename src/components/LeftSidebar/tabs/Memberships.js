@@ -1,3 +1,6 @@
+/* eslint-disable prefer-template */
+/* eslint-disable prefer-const */
+/* eslint-disable import/order */
 import React, { useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
@@ -61,8 +64,9 @@ const Form = ({ item, onChange, identifier = '' }) => {
     <div>
       <TextField
           className="mb-6"
-          label={t('membership.programName.label')}
-          placeholder="Salsa Dance Class"
+          // label={t('membership.programName.label')}
+          label="Association"
+          placeholder="Club Art Oratoire"
           value={_.get(item, "memberOf.programName", "")}
           onChange={v => onChange(`${identifier}memberOf.programName`, v)}
       />
@@ -70,7 +74,8 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <div className="grid grid-cols-2 col-gap-4">
         <TextField
             className="mb-6"
-            label={t('membership.startDate.label')}
+            // label={t('membership.startDate.label')}
+            label="Adhésions"
             placeholder="2019-01-01"
             value={_.get(item, "startDate", "")}
             onChange={v => onChange(`${identifier}startDate`, v)}
@@ -78,7 +83,8 @@ const Form = ({ item, onChange, identifier = '' }) => {
       
         <TextField
             className="mb-6"
-            label={t('membership.endDate.label')}
+            
+            label="Fin"
             placeholder="2020-01-01"
             value={_.get(item, "endDate", "")}
             onChange={v => onChange(`${identifier}endDate`, v)}
@@ -86,8 +92,9 @@ const Form = ({ item, onChange, identifier = '' }) => {
       </div>
         <TextField
             className="mb-6"
-            label={t('membership.roleName.label')}
-            placeholder = "VIP member"
+            // label={t('membership.roleName.label')}
+            label="Role"
+            placeholder = "President "
             value={_.get(item, "roleName", "")}
             onChange={v => onChange(`${identifier}roleName`, v)}
         />

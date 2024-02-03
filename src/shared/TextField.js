@@ -1,10 +1,13 @@
+/* eslint-disable react/state-in-constructor */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable no-nested-ternary */
 import React from 'react';
 import * as _  from 'lodash';
 
-const availableLanguages = ['en', 'fr', 'it', 'de', 'ar'];
+const availableLanguages = ['en', 'fr'];
 
 const MakeSelectOptions = function() {
-  let options = [];
+  const options = [];
   availableLanguages.forEach((c) => {
     options.push(<option key={c} value={c}>{c}</option>);
   });
@@ -13,7 +16,7 @@ const MakeSelectOptions = function() {
 
 export default class TextField extends React.Component {
     state = {
-      editingLanguage: 'en'
+      editingLanguage: 'fr'
 	}
 
     handleMultiTextChange = (value, index) => {
@@ -43,7 +46,7 @@ export default class TextField extends React.Component {
       
       let currrentValueIndex = allValues.findIndex(x => x["@language"] === lang);
       if(currrentValueIndex < 0){
-        let newLang = {
+        const newLang = {
           "@language": lang,
           "@value": ""
         };
@@ -53,6 +56,7 @@ export default class TextField extends React.Component {
       currrentValueIndex = allValues.findIndex(x => x["@language"] === lang);
       return currrentValueIndex;
     }
+
     handleLanguageChange = (lang) => {
       this.initAllValues(lang);
       
@@ -60,16 +64,17 @@ export default class TextField extends React.Component {
         editingLanguage: lang
       });
     }
+
     handleTextChange = (lang, value) => {
-      let currrentValueIndex = this.initAllValues(lang);
-      let allValues = this.props.value;
+      const currrentValueIndex = this.initAllValues(lang);
+      const allValues = this.props.value;
       
       allValues[currrentValueIndex]["@value"] = value;
       this.props.onChange(allValues);
     }
     
     MultiItem = (x, index) => (
-      <div key={"holder_"+index} style={{display: "flex"}}>
+      <div key={`holder_${index}`} style={{display: "flex"}}>
         <input
           className="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
           type={this.props.type}
@@ -77,22 +82,23 @@ export default class TextField extends React.Component {
           value={this.props.value[index]}
           onChange={e => this.handleMultiTextChange(e.target.value, index)}
           placeholder={this.props.placeholder}
-          key={"input_"+index}
+          key={`input_${index}`}
         />
         {(_.size(this.props.value)<=1) ? ("") : (
         <button
           type="button"
           onClick={()=>{_.pullAt(this.props.value, index);this.props.onChange(this.props.value);}}
           className="bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-4 rounded"
-          key={"button_"+index}
+          key={`button_${index}`}
         >
-          <div className="flex items-center" key={"removeHolder_"+index}>
-            <i className="material-icons font-bold text-base" key={"remove_"+index}>remove</i>
+          <div className="flex items-center" key={`removeHolder_${index}`}>
+            <i className="material-icons font-bold text-base" key={`remove_${index}`}>remove</i>
           </div>
         </button>)
         }
       </div>
     );
+
     render() {
       return (
 		<div className={`w-full flex flex-col ${this.props.className}`}>
@@ -134,7 +140,7 @@ export default class TextField extends React.Component {
               </div>
             ) : (
               <input
-                className="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                className="appearance-none block w-full bg-gray-200  text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 type={this.props.type}
                 disabled={this.props.disabled}
                 value={this.props.value}

@@ -1,3 +1,5 @@
+/* eslint-disable prefer-template */
+/* eslint-disable prefer-const */
 import set from 'lodash/set';
 import React, { useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -81,7 +83,7 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <TextField
         className="mb-6"
         label={t('languages.key.label')}
-        placeholder="English"
+        placeholder="Francais"
         value={_.get(item,'name', '')}
         onChange={v => onChange(`${identifier}name`, v)}
       />

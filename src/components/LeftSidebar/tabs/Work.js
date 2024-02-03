@@ -1,3 +1,5 @@
+/* eslint-disable prefer-const */
+/* eslint-disable prefer-template */
 import React, { useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
@@ -85,15 +87,17 @@ const Form = ({ item, onChange, identifier = '' }) => {
     <div>
       <TextField
         className="mb-6"
-        label={t('work.name.label')}
-        placeholder="Amazon"
+        // label={t('work.name.label')}
+        label="Entreprise"
+        placeholder="FasoSoft"
         value={_.get(item, 'subjectOf.organizer.name', '')}
         onChange={v => onChange(`${identifier}subjectOf.organizer.name`, v)}
       />
 
       <TextField
         className="mb-6"
-        label={t('work.role.label')}
+        // label={t('work.role.label')}
+        label="Post"
         placeholder="Full-Stack Web Developer"
         value={_.get(item, 'roleName', '')}
         onChange={v => onChange(`${identifier}roleName`, v)}
@@ -102,7 +106,8 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <div className="grid grid-cols-2 col-gap-4">
         <TextField
           className="mb-6"
-          label={t('app:item.startDate.label')}
+          // label={t('app:item.startDate.label')}
+          label="Debut"
           placeholder="2019-01-01"
           value={_.get(item, 'startDate', '')}
           onChange={v => onChange(`${identifier}startDate`, v)}
@@ -110,7 +115,8 @@ const Form = ({ item, onChange, identifier = '' }) => {
 
         <TextField
           className="mb-6"
-          label={t('app:item.endDate.label')}
+          // label={t('app:item.endDate.label')}
+          label="Fin"
           placeholder="2020-01-01"
           value={_.get(item, 'endDate', '')}
           onChange={v => onChange(`${identifier}endDate`, v)}
@@ -119,8 +125,9 @@ const Form = ({ item, onChange, identifier = '' }) => {
       
       <TextField
         className="mb-6"
-        label={t('work.responsibilities.label')}
-        placeholder="Preparing project plans"
+        // label={t('work.responsibilities.label')}
+        label="Responsabilite"
+        placeholder="Chef de Projet"
         value={_.get(item,'hasOccupation.responsibilities', [])}
         onChange={v => setValue('hasOccupation', "responsibilities", v)}
         AddItem={()=>{}}
@@ -129,8 +136,9 @@ const Form = ({ item, onChange, identifier = '' }) => {
       
       <TextField
         className="mb-6"
-        label={t('work.skills.label')}
-        placeholder="Project Management"
+        // label={t('work.skills.label')}
+        label="Competance"
+        placeholder="Gestion de Projet"
         value={_.get(item,'hasOccupation.skills', [])}
         onChange={v => setValue('hasOccupation', "skills", v)}
         AddItem={()=>{}}
@@ -140,7 +148,8 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <TextArea
         rows="5"
         className="mb-6"
-        label={t('app:item.description.label')}
+        // label={t('app:item.description.label')}
+        label="Decription"
         value={_.get(item, 'description', '')}
         onChange={v => onChange(`${identifier}description`, v)}
       />

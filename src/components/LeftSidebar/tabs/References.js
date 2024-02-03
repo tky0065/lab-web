@@ -1,3 +1,7 @@
+/* eslint-disable import/order */
+/* eslint-disable no-shadow */
+/* eslint-disable prefer-const */
+/* eslint-disable prefer-template */
 import React, { useState, useEffect, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
@@ -82,7 +86,8 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <div className="grid grid-cols-2 col-gap-4">
         <TextField
           className="mb-6"
-          label={t('references.name.label')}
+          // label={t('references.name.label')}
+          label="Prenom"
           placeholder="Richard Hendricks"
           value={_.get(item, 'interactionType.participant.givenName', '')}
           onChange={v => onChange(`${identifier}interactionType.participant.givenName`, v)}
@@ -90,7 +95,8 @@ const Form = ({ item, onChange, identifier = '' }) => {
         
         <TextField
           className="mb-6"
-          label={t('references.familyName.label')}
+          // label={t('references.familyName.label')}
+          label="Nom"
           placeholder="Richard Hendricks"
           value={_.get(item, 'interactionType.participant.familyName', '')}
           onChange={v => onChange(`${identifier}interactionType.participant.familyName`, v)}
@@ -99,24 +105,27 @@ const Form = ({ item, onChange, identifier = '' }) => {
 
       <TextField
         className="mb-6"
-        label={t('references.position.label')}
-        placeholder="CEO, Pied Piper"
+        // label={t('references.position.label')}
+        label="Specialite"
+        placeholder="CEO"
         value={_.get(item, 'interactionType.participant.jobTitle', '')}
         onChange={v => onChange(`${identifier}interactionType.participant.jobTitle`, v)}
       />
 
       <TextField
         className="mb-6"
-        label={t('references.phone.label')}
-        placeholder="+1 541 754 3010"
+        // label={t('references.phone.label')}
+        label="Telephone"
+        placeholder="+226 00 00 00 00"
         value={_.get(item, 'interactionType.participant.telephone', '')}
         onChange={v => onChange(`${identifier}interactionType.participant.telephone`, v)}
       />
 
       <TextField
         className="mb-6"
-        label={t('references.email.label')}
-        placeholder="richard@piedpiper.com"
+        // label={t('references.email.label')}
+        label="Email"
+        placeholder="richard@exemple.com"
         value={_.get(item, 'interactionType.participant.email', '')}
         onChange={v => onChange(`${identifier}interactionType.participant.email`, v)}
       />
@@ -124,7 +133,8 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <TextArea
         rows="5"
         className="mb-6"
-        label={t('app:item.description.label')}
+        // label={t('app:item.description.label')}
+        label="Decription"
         value={_.get(item, 'result[0].reviewRating.ratingExplanation', '')}
         onChange={v => onChange(`${identifier}result[0].reviewRating.ratingExplanation`, v)}
       />

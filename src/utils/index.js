@@ -111,6 +111,7 @@ const saveAsPdf = (pageRef, panZoomRef, quality, type) => {
   if(saveAsPdfTimer){
       return;
   }
+  // eslint-disable-next-line consistent-return
   return new Promise(resolve => {
     panZoomRef.current.autoCenter(1);
     panZoomRef.current.reset();
@@ -160,6 +161,7 @@ const saveAsMultiPagePdf = (pageRef, panZoomRef, quality) => {
   if(saveAsMultiPagePdfTimer){
       return;
   }
+  // eslint-disable-next-line consistent-return
   return new Promise(resolve => {
     panZoomRef.current.autoCenter(1);
     panZoomRef.current.reset();

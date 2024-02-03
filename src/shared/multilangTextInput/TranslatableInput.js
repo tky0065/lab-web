@@ -1,3 +1,10 @@
+/* eslint-disable no-prototype-builtins */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/sort-comp */
+/* eslint-disable react/forbid-prop-types */
+/* eslint-disable react/require-default-props */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/no-extraneous-dependencies */
 // eslint-disable-next-line import/no-unresolved, import/extensions
 /*
 import TranslatableInput from './multilangTextInput/TranslatableInput';

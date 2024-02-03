@@ -1,3 +1,7 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable no-shadow */
+/* eslint-disable prefer-const */
+/* eslint-disable prefer-template */
 import React, { useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
@@ -56,7 +60,8 @@ const Form = ({ item, onChange, identifier = '' }) => {
     <div>
       <TextField
         className="mb-6"
-        label={t('address.streetAddress.label')}
+        label="Adresse de la rue"
+        // label={t('address.streetAddress.label')}
         placeholder="20 Malvin Dr"
         value={item.streetAddress}
         onChange={v => onChange(`${identifier}streetAddress`, v)}
@@ -64,16 +69,18 @@ const Form = ({ item, onChange, identifier = '' }) => {
 
       <TextField
         className="mb-6"
-        label={t('address.addressLocality.label')}
-        placeholder="Toronto"
+        // label={t('address.addressLocality.label')}
+        label="adresse Localité"
+        placeholder="Bobo Dioulasso"
         value={item.addressLocality}
         onChange={v => onChange(`${identifier}addressLocality`, v)}
       />
       
       <TextField
         className="mb-6"
-        label={t('address.addressRegion.label')}
-        placeholder="ON"
+        // label={t('address.addressRegion.label')}
+        label=" Région"
+        placeholder="Cascade"
         value={item.addressRegion}
         onChange={v => onChange(`${identifier}addressRegion`, v)}
       />
@@ -81,16 +88,18 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <div className="grid grid-cols-2 col-gap-4">
         <TextField
           className="mb-6"
-          label={t('address.addressCountry.label')}
-          placeholder="Canada"
+          // label={t('address.addressCountry.label')}
+          label=" Pays"
+          placeholder="Burkina Faso"
           value={item.addressCountry}
           onChange={v => onChange(`${identifier}addressCountry`, v)}
         />
 
         <TextField
           className="mb-6"
-          label={t('address.postalCode.label')}
-          placeholder="H1H 0H0"
+          // label={t('address.postalCode.label')}
+          label=" Code Postal"
+          placeholder="BP 226"
           value={item.postalCode}
           onChange={v => onChange(`${identifier}postalCode`, v)}
         />
@@ -98,8 +107,9 @@ const Form = ({ item, onChange, identifier = '' }) => {
       
       <TextField
         className="mb-6"
-        label={t('address.sameAs.label')}
-        placeholder="Google Map Url of address"
+        // label={t('address.sameAs.label')}
+        label=" Localistation"
+        placeholder="Google Map Url (optionel)"
         value={item.sameAs}
         onChange={v => onChange(`${identifier}sameAs`, v)}
       />

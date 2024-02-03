@@ -1,3 +1,7 @@
+/* eslint-disable vars-on-top */
+/* eslint-disable camelcase */
+/* eslint-disable prefer-const */
+/* eslint-disable no-var */
 /* eslint-disable new-cap */
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -5,12 +9,13 @@
 import React, { useRef, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import PageContext from '../../../context/PageContext';
-import { importJson } from '../../../utils';
+
 
 import * as _  from 'lodash';
 import * as JSZip from 'jszip';
 import { saveAs } from 'file-saver';
+import { importJson } from '../../../utils';
+import PageContext from '../../../context/PageContext';
 
 const ActionsTab = ({ data, theme, dispatch }) => {
   const pageContext = useContext(PageContext);
@@ -21,9 +26,9 @@ const ActionsTab = ({ data, theme, dispatch }) => {
   const exportToJsonld = () => {
     const backupObj = { data, theme };
     let dataclone = _.cloneDeep(data.jsonld);
-    let javascript_part1 = '<script type="application/ld+json">'+JSON.stringify(dataclone)+"</script>";
+    let javascript_part1 = `<script type="application/ld+json">${JSON.stringify(dataclone)}</script>`;
     _.set(dataclone['@graph'][1], "@context", "http://schema.org/");
-    let javascript_part2 = '<script type="application/ld+json">'+JSON.stringify(dataclone['@graph'][1])+"</script>";
+    let javascript_part2 = `<script type="application/ld+json">${JSON.stringify(dataclone['@graph'][1])}</script>`;
     
     let javascript = javascript_part1 + javascript_part2;
     var zip = new JSZip();

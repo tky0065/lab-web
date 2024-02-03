@@ -34,12 +34,12 @@ const Blocks = {
   references: ReferencesA,
 };
 
-const Glalie = () => {
-  
+const ArticunoCus = () => {
+ // const { t } = useTranslation();
   const context = useContext(AppContext);
   const { state } = context;
   const { data, theme } = state;
-  const layout = _.get(theme,'layoutblocks.glalie', []);
+  const layout = _.get(theme,'layoutblocks.articunoCus', []);
   
   const { r, g, b } = hexToRgb(theme.colors.primary) || {};
 
@@ -61,8 +61,6 @@ const Glalie = () => {
       </div>
     </div>
   );
-
-  //const { t } = useTranslation();
 
   return (
     <PageContext.Provider value={{ data, heading: HeadingB }}>
@@ -109,4 +107,4 @@ const Glalie = () => {
   );
 };
 
-export default Glalie;
+export default ArticunoCus;

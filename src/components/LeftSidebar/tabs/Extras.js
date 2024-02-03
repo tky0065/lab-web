@@ -61,7 +61,8 @@ const Form = ({ item, onChange, identifier = '' }) => {
     <div>
       <TextField
         className="mb-6"
-        label={t('extras.key.label')}
+        // label={t('extras.key.label')}
+        label="Formation"
         placeholder="Date of Birth"
         value={_.get(item, 'propertyID', '')}
         onChange={v => onChange(`${identifier}propertyID`, v)}

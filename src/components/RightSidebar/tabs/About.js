@@ -108,7 +108,7 @@ const AboutTab = () => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              Amruth Pillai
+              ENOKDEV
             </a>
           </Trans>
         </p>

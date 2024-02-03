@@ -6,22 +6,22 @@ import detector from 'i18next-browser-languagedetector';
 import resources from './locales';
 
 const languages = [
-  {
-    code: 'ar',
-    name: 'Arabic (عربى)',
-  },
-  {
-    code: 'zh',
-    name: 'Chinese (中文)',
-  },
-  {
-    code: 'da',
-    name: 'Danish (Dansk)',
-  },
-  {
-    code: 'nl',
-    name: 'Dutch (Nederlands)',
-  },
+  // {
+  //   code: 'ar',
+  //   name: 'Arabic (عربى)',
+  // },
+  // {
+  //   code: 'zh',
+  //   name: 'Chinese (中文)',
+  // },
+  // {
+  //   code: 'da',
+  //   name: 'Danish (Dansk)',
+  // },
+  // {
+  //   code: 'nl',
+  //   name: 'Dutch (Nederlands)',
+  // },
   {
     code: 'en',
     name: 'English (US)',
@@ -30,50 +30,50 @@ const languages = [
     code: 'fr',
     name: 'French (Français)',
   },
-  {
-    code: 'de',
-    name: 'German (Deutsche)',
-  },
-  {
-    code: 'he',
-    name: 'Hebrew (עברית)',
-  },
-  {
-    code: 'hi',
-    name: 'Hindi (हिन्दी)',
-  },
-  {
-    code: 'it',
-    name: 'Italian (Italiano)',
-  },
-  {
-    code: 'kn',
-    name: 'Kannada (ಕನ್ನಡ)',
-  },
-  {
-    code: 'pl',
-    name: 'Polish (Polskie)',
-  },
-  {
-    code: 'pt',
-    name: 'Portuguese (Português)',
-  },
-  {
-    code: 'ru',
-    name: 'Russian (русский)',
-  },
-  {
-    code: 'es',
-    name: 'Spanish (Español)',
-  },
-  {
-    code: 'ta',
-    name: 'Tamil (தமிழ்)',
-  },
-  {
-    code: 'vi',
-    name: 'Vietnamese (Tiếng Việt)',
-  },
+  // {
+  //   code: 'de',
+  //   name: 'German (Deutsche)',
+  // },
+  // {
+  //   code: 'he',
+  //   name: 'Hebrew (עברית)',
+  // },
+  // {
+  //   code: 'hi',
+  //   name: 'Hindi (हिन्दी)',
+  // },
+  // {
+  //   code: 'it',
+  //   name: 'Italian (Italiano)',
+  // },
+  // {
+  //   code: 'kn',
+  //   name: 'Kannada (ಕನ್ನಡ)',
+  // },
+  // {
+  //   code: 'pl',
+  //   name: 'Polish (Polskie)',
+  // },
+  // {
+  //   code: 'pt',
+  //   name: 'Portuguese (Português)',
+  // },
+  // {
+  //   code: 'ru',
+  //   name: 'Russian (русский)',
+  // },
+  // {
+  //   code: 'es',
+  //   name: 'Spanish (Español)',
+  // },
+  // {
+  //   code: 'ta',
+  //   name: 'Tamil (தமிழ்)',
+  // },
+  // {
+  //   code: 'vi',
+  //   name: 'Vietnamese (Tiếng Việt)',
+  // },
 ];
 
 i18n
@@ -82,8 +82,8 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'en',
-    fallbackLng: 'en',
+    lng: 'fr',
+    fallbackLng: 'fr',
     ns: ['app', 'leftSidebar', 'rightSidebar'],
     defaultNS: 'app',
   });

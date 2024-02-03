@@ -34,7 +34,7 @@ const Blocks = {
 };
 
 const Castform = () => {
-  const { t } = useTranslation();
+ // const { t } = useTranslation();
   const context = useContext(AppContext);
   const { state } = context;
   const { data, theme } = state;

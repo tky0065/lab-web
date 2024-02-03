@@ -22,14 +22,14 @@ const CertificationsTab = ({ data, onChange }) => {
         <div className="col-span-1">
           <Checkbox
             checked={data.certifications.enable}
-            onChange={v => onChange('data.certifications.enable', v)}
+            onChange={(v) => onChange('data.certifications.enable', v)}
           />
         </div>
         <div className="col-span-5">
           <TextField
             placeholder="Heading"
             value={data.certifications.heading}
-            onChange={v => onChange('data.certifications.heading', v)}
+            onChange={(v) => onChange('data.certifications.heading', v)}
           />
         </div>
       </div>
@@ -60,25 +60,28 @@ const Form = ({ item, onChange, identifier = '' }) => {
     <div>
       <TextField
         className="mb-6"
-        label={t('certifications.title.label')}
-        placeholder="CS50: Intro to Computer Science"
+        label="Nom du certification"
+        // label={t('certifications.title.label')}
+        placeholder="CS50: Intro Informatique"
         value={item.title}
-        onChange={v => onChange(`${identifier}title`, v)}
+        onChange={(v) => onChange(`${identifier}title`, v)}
       />
 
       <TextField
         className="mb-6"
-        label={t('certifications.subtitle.label')}
-        placeholder="Harvard University"
+        // label={t('certifications.subtitle.label')}
+        label=" Structure"
+        placeholder=" Universite NAZI BONI"
         value={item.subtitle}
-        onChange={v => onChange(`${identifier}subtitle`, v)}
+        onChange={(v) => onChange(`${identifier}subtitle`, v)}
       />
 
       <TextArea
         className="mb-6"
-        label={t('app:item.description.label')}
+        // label={t('app:item.description.label')}
+        label="Description"
         value={item.description}
-        onChange={v => onChange(`${identifier}description`, v)}
+        onChange={(v) => onChange(`${identifier}description`, v)}
       />
     </div>
   );

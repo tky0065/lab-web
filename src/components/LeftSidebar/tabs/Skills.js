@@ -44,7 +44,7 @@ const Form = ({ item, onChange }) => {
   return (
     <input
       className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-      placeholder="Team Building &amp; Training"
+      placeholder="Team Building &amp; Formation"
       value={item.skill}
       onChange={e => onChange(e.target.value)}
       type="text"

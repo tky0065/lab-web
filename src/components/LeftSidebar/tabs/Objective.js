@@ -1,3 +1,6 @@
+/* eslint-disable prefer-template */
+/* eslint-disable prefer-const */
+/* eslint-disable import/order */
 import React, { useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
@@ -61,8 +64,9 @@ const Availablity = ({item, onChange}) => {
     <div>
       <TextField
         className="mb-6"
-        label={t('address.addressLocality.label')}
-        placeholder="Toronto"
+        // label={t('address.addressLocality.label')}
+        label="Ville"
+        placeholder="Ouaga"
         value={_.get(item,'addressLocality', '')}
         onChange={v => onChange('addressLocality', v)}
       />
@@ -70,16 +74,18 @@ const Availablity = ({item, onChange}) => {
       <div className="grid grid-cols-2 col-gap-4">
         <TextField
           className="mb-6"
-          label={t('address.addressRegion.label')}
-          placeholder="ON"
+          // label={t('address.addressRegion.label')}
+          label="Region"
+          placeholder="Centre"
           value={_.get(item,'addressRegion','')}
           onChange={v => onChange('addressRegion', v)}
         />
 
         <TextField
           className="mb-6"
-          label={t('address.addressCountry.label')}
-          placeholder="Canada"
+          // label={t('address.addressCountry.label')}
+          label="Pays"
+          placeholder="BF"
           value={_.get(item,'addressCountry','')}
           onChange={v => onChange('addressCountry', v)}
         />

@@ -1,3 +1,7 @@
+/* eslint-disable no-shadow */
+/* eslint-disable prefer-const */
+/* eslint-disable prefer-template */
+/* eslint-disable no-unused-vars */
 import React, { useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
@@ -63,16 +67,18 @@ const Form = ({ item, onChange, identifier = '' }) => {
     <div>
       <TextField
         className="mb-6"
-        label={t('profile.phone.label')}
-        placeholder="+1 (999)999-9999"
+        // label={t('profile.phone.label')}
+        label="Numero de telephone"
+        placeholder="+226 00000000"
         value={item.telephone}
         onChange={v => onChange(`${identifier}telephone`, v)}
       />
 
       <TextField
         className="mb-6"
-        label={t('profile.email.label')}
-        placeholder="info@jsonldresume.org"
+        // label={t('profile.email.label')}
+        label="Adress mail"
+        placeholder="enokdev@gmail.com"
         value={item.email}
         onChange={v => onChange(`${identifier}email`, v)}
       />
@@ -80,16 +86,17 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <Dropdown
         className="mb-6"
         label={t('profile.contactType.label')}
-        placeholder="Only preferred is shown on resume"
+        placeholder="Seul le préféré est affiché sur le CV"
         value={item.contactType}
         onChange={v => onChange(`${identifier}contactType`, v)}
-        options = {["Preferred", "Emergency", "Other"]}
+        options = {["Préférée", "Urgence", "Autre"]}
         optionItem = {ContactTypeOption}
       />
       
       <TextField
         className="mb-6"
-        label={t('profile.contacts.description')}
+        // label={t('profile.contacts.description')}
+        label="Decription"
         placeholder="Description"
         value={item.description}
         onChange={v => onChange(`${identifier}description`, v)}

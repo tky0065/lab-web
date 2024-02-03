@@ -18,7 +18,8 @@ toast.configure({
   hideProgressBar: true,
   position: toast.POSITION.BOTTOM_RIGHT,
 });
-
+              
+        
 ReactDOM.render(
   <React.StrictMode>
     <AppProvider>

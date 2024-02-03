@@ -1,3 +1,7 @@
+/* eslint-disable prefer-const */
+/* eslint-disable prefer-template */
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/order */
 import React, { useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
@@ -97,26 +101,29 @@ const Form = ({ item, onChange, identifier = '' }) => {
     <div>
       <TextField
         className="mb-6"
-        label={t('education.name.label')}
-        placeholder="Harvard University"
+        // label={t('education.name.label')}
+        label="Universite"
+        placeholder="Universite NAZI BONI"
         value={_.get(item, "about.provider.name", "")}
         onChange={v => onChange(`${identifier}about.provider.name`, v)}
       />
       <div className="grid grid-cols-2 col-gap-4">
         <Dropdown
           className="mb-6"
-          label={t('education.type.label')}
-          placeholder="Certificate type"
+          // label={t('education.type.label')}
+          label="Type certificat"
+          placeholder="Type Certificate"
           value={_.get(item, "credentialCategory", "")}
           onChange={v => onChange(`${identifier}credentialCategory`, v)}
-          options = {["Degree", "Certificate", "Badge"]}
+          options = {["Niveau", "Certificat", "Attestation","Diplome"]}
           optionItem = {EducationTypeOption}
         />
         
         <TextField
           className="mb-6"
-          label={t('education.major.degree')}
-          placeholder="Masters of Science"
+          // label={t('education.major.degree')}
+          label='Niveau '
+          placeholder="Masters en Info..."
           value={_.get(item, "educationalLevel", "")}
           onChange={v => onChange(`${identifier}educationalLevel`, v)}
         />
@@ -124,8 +131,9 @@ const Form = ({ item, onChange, identifier = '' }) => {
 
       <TextField
         className="mb-6"
-        label={t('education.major.label')}
-        placeholder="Computer Science"
+        // label={t('education.major.label')}
+        label="Formation"
+        placeholder="Informaique"
         value={_.get(item, "about.educationalCredentialAwarded", "")}
         onChange={v => onChange(`${identifier}about.educationalCredentialAwarded`, v)}
       />
@@ -133,16 +141,17 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <div className="grid grid-cols-2 col-gap-4">
         <TextField
           className="mb-6"
-          label={t('education.grade.label')}
-          placeholder="3.7"
+          // label={t('education.grade.label')}
+          label="Moyen"
+          placeholder="18.58"
           value={_.get(item, "aggregateRating.ratingValue", "")}
           onChange={v => onChange(`${identifier}aggregateRating.ratingValue`, v)}
         />
         
         <TextField
           className="mb-6"
-          label={t('education.maxGrade.label')}
-          placeholder="4"
+          label="Moyen Maximum"
+          placeholder="20"
           value={_.get(item, "aggregateRating.bestRating", "")}
           onChange={v => onChange(`${identifier}aggregateRating.bestRating`, v)}
         />
@@ -151,7 +160,8 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <div className="grid grid-cols-2 col-gap-4">
         <TextField
           className="mb-6"
-          label={t('app:item.startDate.label')}
+          // label={t('app:item.startDate.label')}
+          label="Debut"
           placeholder="2018-01-01"
           value={_.get(item, "about.startDate", "")}
           onChange={v => onChange(`${identifier}about.startDate`, v)}
@@ -159,7 +169,8 @@ const Form = ({ item, onChange, identifier = '' }) => {
       
         <TextField
           className="mb-6"
-          label={t('app:item.endDate.label')}
+          // label={t('app:item.endDate.label')}
+          label="Fin"
           placeholder="2020-01-01"
           value={_.get(item, "about.endDate", "")}
           onChange={v => onChange(`${identifier}about.endDate`, v)}
@@ -168,8 +179,9 @@ const Form = ({ item, onChange, identifier = '' }) => {
       
       <TextField
         className="mb-6"
-        label={t('work.skills.label')}
-        placeholder="Project Management"
+        // label={t('work.skills.label')}
+        label="Compétence"
+        placeholder="Concepteur"
         value={_.get(item,'teaches', [])}
         onChange={v => setValue('teaches', '', v)}
         AddItem={()=>{}}
@@ -179,7 +191,8 @@ const Form = ({ item, onChange, identifier = '' }) => {
       <TextArea
         rows="5"
         className="mb-6"
-        label={t('app:item.description.label')}
+        // label={t('app:item.description.label')}
+        label="description"
         value={_.get(item, 'abstract', '')}
         onChange={v => onChange(`${identifier}abstract`, v)}
       />

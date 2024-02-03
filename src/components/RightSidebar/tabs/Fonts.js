@@ -10,6 +10,7 @@ const fontOptions = [
   'Open Sans',
   'Raleway',
   'Rubik',
+  'Roboto',
   'Source Sans Pro',
   'Titillium Web',
   'Ubuntu',

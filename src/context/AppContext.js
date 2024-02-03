@@ -40,8 +40,8 @@ const initialState = {
         },
         {
           "@type": "Person",
-          givenName:[{'@language': 'en', '@value':''}],
-          familyName: [{'@language': 'en', '@value':''}],
+          givenName:[{'@language': 'fr', '@value':''}],
+          familyName: [{'@language': 'fr', '@value':''}],
           address: []
         }
       ]
@@ -233,7 +233,7 @@ const initialState = {
 		}
   },
   settings: {
-    language: 'en',
+    language: 'fr',
   },
 };
 
